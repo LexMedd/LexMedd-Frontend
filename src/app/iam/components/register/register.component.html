@@ -1,0 +1,38 @@
+<form [formGroup]="registerForm" class="login-container">
+  <h1>Register</h1>
+
+  <div class="login-options">
+    <a routerLink="/login">Log in</a>
+    <b><a routerLink="/register">Register</a></b>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput placeholder="Juana Maria Sanchez Carrión">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Specialization</mat-label>
+    <input type="text" matInput placeholder="Medicina">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="example@mail.com">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="*****">
+  </mat-form-field>
+
+  <!-- Enlazamos el mat-radio-group con formControlName -->
+  <mat-radio-group formControlName="selectedRole" aria-label="Select an option">
+    <mat-radio-button name="role" value="abogado">Abogado</mat-radio-button>
+    <mat-radio-button name="role" value="doctor">Doctor</mat-radio-button>
+  </mat-radio-group>
+
+  <button mat-flat-button color="primary" (click)="onSubmit()">Create</button>
+</form>
