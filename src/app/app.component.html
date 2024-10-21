@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <img ngSrc="../assets/img/logo.png" alt="Logo" class="logo" height="185" width="159">
+  <div class="mat-spacer"></div>
+  <div class="centered-links">
+    <ng-container *ngFor="let option of options">
+      <a mat-button *ngIf="option.title !== 'LandingPage'" [routerLink]="option.path">{{ option.title }}</a>
+    </ng-container>
+  </div>
+  <a mat-button [routerLink]="'/landingPage'" class="right-link">LandingPage</a>
+</mat-toolbar>
+<router-outlet/>
+<footer>
+  <app-footer-content></app-footer-content>
+</footer>
