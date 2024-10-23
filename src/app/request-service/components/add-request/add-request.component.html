@@ -1,0 +1,39 @@
+<div class="request-form-container">
+  <h1 class="form-title">Submit a Legal Inquiry</h1>
+  <p class="form-subtitle">We’re here to connect you with the right legal support!</p>
+
+  <form #requestForm="ngForm" (ngSubmit)="onSubmit()" class="form-layout">
+    <div class="form-group">
+      <label for="requestType">Select a request type</label>
+      <select id="requestType" name="requestType" [(ngModel)]="request.type" required>
+        <option value="">Select the type of legal support you need...</option>
+        <option value="malpractice">Malpractice Case</option>
+        <option value="negligence">Negligence Issue</option>
+        <option value="consultation">Legal Consultation</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="inquiry">Select your inquiry</label>
+      <select id="inquiry" name="inquiry" [(ngModel)]="request.inquiry" required>
+        <option value="">Select an option</option>
+        <option value="urgent">Urgent Matter</option>
+        <option value="general">General Inquiry</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" [(ngModel)]="request.subject" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" [(ngModel)]="request.description" required></textarea>
+    </div>
+
+    <div class="button-group">
+      <button mat-button type="submit" [disabled]="isSubmitting">Submit</button>
+    </div>
+  </form>
+</div>

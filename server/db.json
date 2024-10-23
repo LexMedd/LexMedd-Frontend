@@ -1,5 +1,59 @@
 {
-  "posts": [
-    { "id": 1, "title": "Hello World" }
+  "users": [
+    {
+      "id": 1,
+      "name": "Juan Perez",
+      "email": "juan.perez@example.com",
+      "password": "12345"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "userId": 0,
+      "type": "consultation",
+      "inquiry": "general",
+      "subject": "Roberto",
+      "description": "Opere la mano equivocada",
+      "creationDate": "2024-10-22T07:07:11.924Z",
+      "statusId": 2
+    },
+    {
+      "id": 2,
+      "userId": 0,
+      "type": "negligence",
+      "inquiry": "general",
+      "subject": "Pepito",
+      "description": "LE DI ANASTENCIA Y NUNCA MAS SE LEVANTO",
+      "creationDate": "2024-10-22T07:10:59.645Z",
+      "statusId": 3
+    },
+    {
+      "id": 3,
+      "userId": 0,
+      "type": "consultation",
+      "inquiry": "general",
+      "subject": "test",
+      "description": "test",
+      "creationDate": "2024-10-23T04:30:23.150Z",
+      "statusId": 2
+    }
+  ],
+  "statuses": [
+    {
+      "id": 1,
+      "name": "pending",
+      "description": "La solicitud está pendiente de revisión"
+    },
+    {
+      "id": 2,
+      "name": "accepted",
+      "description": "La solicitud ha sido aceptada"
+    },
+    {
+      "id": 3,
+      "name": "rejected",
+      "description": "La solicitud ha sido rechazada"
+    }
   ]
 }
