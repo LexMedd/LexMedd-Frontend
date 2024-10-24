@@ -1,5 +1,18 @@
 {
-  "posts": [
-    { "id": 1, "title": "Hello World" }
+  "subscriptionPlans": [
+    {
+      "id": 1,
+      "title": "Ayuda Legal",
+      "description": "Asistencia legal especializada de parte de abogados expertos en medicina legal.",
+      "price": 100,
+      "type": "legal"
+    },
+    {
+      "id": 2,
+      "title": "Suscripción Mensual",
+      "description": "Acceso exclusivo a consultas y asesorías especializadas en el ámbito de la medicina.",
+      "price": 50,
+      "type": "monthly"
+    }
   ]
 }
