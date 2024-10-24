@@ -27,7 +27,7 @@ import {SubscriptionPlanRepositoryImpl} from './subscription-plans/infrastructur
     CommonModule,
     MatCardModule,
     SubscriptionPlansModule,
-    
+
   ],
   providers: [
     { provide: 'SubscriptionPlanRepository', useClass: SubscriptionPlanRepositoryImpl }
