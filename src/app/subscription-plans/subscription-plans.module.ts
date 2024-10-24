@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { SubscriptionPlansRoutingModule } from './subscription-plans-routing.module';
-
+import { SubscriptionPlansComponent } from './ui/components/subscription-plans/subscription-plans.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    SubscriptionPlansRoutingModule
-  ]
+  declarations: [SubscriptionPlansComponent],
+  imports: [CommonModule, MatCardModule, MatButtonModule],
+  exports: [SubscriptionPlansComponent]
 })
-export class SubscriptionPlansModule { }
+export class SubscriptionPlansModule {}
