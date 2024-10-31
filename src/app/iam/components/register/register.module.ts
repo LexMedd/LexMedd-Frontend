@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatDivider } from '@angular/material/divider';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
@@ -19,7 +19,8 @@ import { RegisterComponent } from './register.component';
         MatButton,
         MatInput,
         RouterLink,
-        MatLabel
+        MatLabel,
+        FormsModule
     ],
     exports: [RegisterComponent]
 })

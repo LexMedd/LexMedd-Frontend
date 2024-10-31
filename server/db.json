@@ -1,20 +1,42 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "Hello World"
-    }
-  ],
   "users": [
     {
       "id": 1,
-      "email": "juisjuas",
-      "password": "123"
+      "name": "Juan Carlos Perez Rodriguez",
+      "email": "juan.carlos@example.com",
+      "password": "password123",
+      "userType": "lawyer",
+      "subscription": "Premium",
+      "urlToImage": "https://www.narcity.com/media-library/image.jpg?id=25902742&width=1245&height=700&coordinates=0%2C5%2C0%2C5"
     },
     {
       "id": 2,
-      "email": "a",
-      "password": "a"
+      "name": "Maria Luisa Gonzales Fernandez",
+      "email": "maria.luisa@example.com",
+      "password": "password456",
+      "userType": "lawyer",
+      "subscription": "Gold",
+      "urlToImage": "https://kcdefensecounsel.b-cdn.net/wp-content/uploads/2023/03/female-intelligent-law-attorney-lawyers-working-at-2023-03-08-20-54-26-utc-1-scaled.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Carlos Rodriguez",
+      "email": "carlos.rodriguez@example.com",
+      "password": "doctorpass123",
+      "userType": "doctor",
+      "specialization": "Cardiology",
+      "place": "Lima",
+      "urlToImage": "https://example.com/doctor1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Dra. Ana Martinez",
+      "email": "ana.martinez@example.com",
+      "password": "doctorpass456",
+      "userType": "doctor",
+      "specialization": "Pediatrics",
+      "place": "Arequipa",
+      "urlToImage": "https://example.com/doctor2.jpg"
     }
   ]
 }

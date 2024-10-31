@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatFormField, MatLabel } from "@angular/material/form-field";
@@ -28,11 +28,12 @@ import { User } from "../../model/user";  // Importa lo necesario para Reactive 
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  // Definimos el FormGroup y los controles
-  registerForm = new FormGroup({
-    selectedRole: new FormControl(''),  // FormControl para el role
 
-  });
+
+  @Input() email = '';
+  @Input() specialization = '';
+  @Input() name = '';
+  @Input() password = '';
 
   userApi = inject(UserApiService);
 
@@ -40,16 +41,8 @@ export class RegisterComponent {
   constructor(private router: Router) { }
 
   onSubmit() {
-    const selectedRole = this.registerForm.get('selectedRole')?.value;  // Obtén el valor del FormControl
-    if (selectedRole === 'abogado') {
-      alert("abogado");
+    this.userApi.register(this.name, this.specialization, this.email, this.password).subscribe();
+    this.router.navigate(['/perfil']);
 
-      this.router.navigate(['/lawyer-profile']);  // Redirigir si es abogado
-    } else if (selectedRole === 'doctor') {
-      alert("doctor");
-      this.router.navigate(['/doctor-profile']);  // Redirigir si es doctor
-    } else {
-      alert('Please select a role before continuing.');
-    }
   }
 }

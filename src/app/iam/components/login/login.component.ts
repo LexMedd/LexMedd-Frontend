@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { FormsModule } from '@angular/forms'; // Importar FormsModule para usar ngModel
 import { UserApiService } from "../../services/user-api.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -21,6 +21,7 @@ import { SnackbarComponent } from '../../../public/components/snackbar/snackbar.
 export class LoginComponent {
   userApi = inject(UserApiService);
   snackBar = inject(MatSnackBar);
+  router = inject(Router);
   @Input() email = '';
   @Input() password = '';
 
@@ -34,7 +35,7 @@ export class LoginComponent {
             icon: 'close'
           }
         });
-
+        this.router.navigate(['/perfil']);
 
 
       } else {
