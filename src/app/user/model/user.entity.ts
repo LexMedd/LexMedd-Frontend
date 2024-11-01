@@ -1,4 +1,4 @@
-export class User {
+export class UserEntity {
   id: number;
   name: string;
   email: string;
@@ -12,7 +12,6 @@ export class User {
   consultationsCompleted?: number;
   specialization?: string;
   place?: string;
-
 
   constructor() {
     this.id = 0;
