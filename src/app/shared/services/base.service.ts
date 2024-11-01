@@ -1,38 +1,62 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import {inject, Injectable} from '@angular/core';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {catchError, Observable, retry, throwError} from "rxjs";
+import {environment} from '../../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class BaseService {
-  protected baseUrl = environment.serverBasePath;
+export class BaseService<T> {
 
-  constructor(private http: HttpClient) {}
+  protected httOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
-  getAll(endpoint: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/${endpoint}`);
+  protected http: HttpClient = inject(HttpClient);
+
+  protected basePath: string = `${environment.serverBasePath}`;
+
+  protected resourceEndpoint: string = '';
+
+  protected handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      console.error(`An error occurred: ${error.error.message}`);
+    } else {
+      console.error(`Backend returned code ${error.status}, body was: ${error.error}`);
+    }
+    return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 
-  getById(endpoint: string, id: number): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/${endpoint}/${id}`);
+  protected resourcePath() {
+    return `${this.basePath}${this.resourceEndpoint}`;
   }
 
-  create(endpoint: string, item: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/${endpoint}`, item);
+  public create(item: any): Observable<T> {
+    return this.http.post<T>(this.resourcePath(), JSON.stringify(item), this.httOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
-  update(endpoint: string, item: any): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/${endpoint}/${item.id}`, item);
+  public delete(id: any): Observable<any> {
+    return this.http.delete(`${this.resourcePath()}/${id}`, this.httOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
-  delete(endpoint: string, id: number): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/${endpoint}/${id}`);
+  public update(id: any, item: any): Observable<T> {
+    return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item), this.httOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  public getAll(): Observable<T[]> {
+    return this.http.get<T[]>(this.resourcePath(), this.httOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  public getById(id: any): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   // Método específico para obtener el usuario actual
   getCurrentUser(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/users/current`);
+    return this.http.get<any>(`${this.resourcePath()}/users/current`);
   }
 }
