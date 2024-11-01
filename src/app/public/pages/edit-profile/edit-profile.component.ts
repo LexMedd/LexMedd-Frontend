@@ -1,21 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../../user/model/user.entity';
+import { UserEntity} from '../../../user/model/user.entity';
 import { BaseService } from '../../../shared/services/base.service';
 import { firstValueFrom } from 'rxjs';
+import {User} from '../../../iam/model/user';
+import {MatButton} from '@angular/material/button';
+import {RebaseService} from '../../../shared/services/rebase.service';
+import {ToolbarContentComponent} from '../../components/toolbar-content/toolbar-content.component';
+import {FooterContentComponent} from '../../components/footer-content/footer-content.component';
 
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
+  standalone: true,
+  imports: [
+    MatButton,
+    ToolbarContentComponent,
+    FooterContentComponent,
+
+  ],
   styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent implements OnInit {
-  user: User = new User();
+  user: UserEntity = new UserEntity();
   fileName: string | undefined;
 
   constructor(
     private router: Router,
-    private userService: BaseService
+    private userService: RebaseService
   ) {}
 
   ngOnInit() {
