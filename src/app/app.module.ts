@@ -3,19 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { CommonModule } from '@angular/common';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DataAccessModule } from './subscription-plans/infrastructure/data-access/data-access.module';
-import { MatCardModule } from '@angular/material/card';
-import { SubscriptionPlansModule } from './subscription-plans/subscription-plans.module';
-import { SubscriptionPlanRepository } from './subscription-plans/domain/repositories/subscription-plan.repository';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HttpClientModule } from '@angular/common/http';
 
-import {SubscriptionPlanRepositoryImpl} from './subscription-plans/infrastructure/repositories/subscription-plan.repository.repository.impl';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+
+import { SubscriptionPlansComponent } from './subscription-plans/ui/components/subscription-plans/subscription-plans.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -23,14 +29,19 @@ import {SubscriptionPlanRepositoryImpl} from './subscription-plans/infrastructur
     AppRoutingModule,
     MatButtonModule,
     MatToolbarModule,
-    DataAccessModule,
+    HttpClientModule,
+
     CommonModule,
     MatCardModule,
-    SubscriptionPlansModule,
+
+    SubscriptionPlansComponent,
+
+    MatSidenavModule,
+    MatIconModule,
 
   ],
   providers: [
-    { provide: 'SubscriptionPlanRepository', useClass: SubscriptionPlanRepositoryImpl }
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
