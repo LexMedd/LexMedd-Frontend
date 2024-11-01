@@ -16,6 +16,7 @@ import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {StatusEntity} from '../../model/status.entity';
 import {ToolbarContentComponent} from '../../../public/components/toolbar-content/toolbar-content.component';
+import {AppModule} from '../../../app.module';
 
 @Component({
   selector: 'app-request-history',
@@ -37,7 +38,8 @@ import {ToolbarContentComponent} from '../../../public/components/toolbar-conten
     MatOption,
     MatSelect,
     MatLabel,
-    ToolbarContentComponent
+    ToolbarContentComponent,
+
   ],
   templateUrl: './request-history.component.html',
   styleUrl: './request-history.component.css'

@@ -25,6 +25,8 @@ import {StatusEntity} from '../../model/status.entity';
 import {catchError, debounceTime, distinctUntilChanged, forkJoin, fromEvent, of} from 'rxjs';
 import {MatOption, MatSelect, MatSelectModule} from '@angular/material/select';
 import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-toggle';
+import {AppModule} from '../../../app.module';
+import {FooterContentComponent} from '../../../public/components/footer-content/footer-content.component';
 
 @Component({
   selector: 'app-list-request',
@@ -64,7 +66,8 @@ import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-to
     MatSelectModule,
     MatFormFieldModule,
     MatButtonToggle,
-    MatButtonToggleGroup
+    MatButtonToggleGroup,
+    FooterContentComponent
   ],
   templateUrl: './list-request.component.html',
   styleUrl: './list-request.component.css'

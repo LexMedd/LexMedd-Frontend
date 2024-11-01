@@ -5,15 +5,19 @@ import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
 import {RequestService} from "../../service/request.service";
 import {RequestServiceEntity} from "../../model/request-service.entity";
+import {HttpClientModule} from '@angular/common/http';
 import {ToolbarContentComponent} from '../../../public/components/toolbar-content/toolbar-content.component';
+import {AppModule} from '../../../app.module';
 import {FooterContentComponent} from '../../../public/components/footer-content/footer-content.component';
 
 @Component({
   selector: 'app-request',
   standalone: true,
   imports: [
+    HttpClientModule,
     AddRequestComponent,
     ToolbarContentComponent,
+
     FooterContentComponent
   ],
   templateUrl: './request.component.html',

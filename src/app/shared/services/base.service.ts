@@ -54,4 +54,9 @@ export class BaseService<T> {
     return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  // Método específico para obtener el usuario actual
+  getCurrentUser(): Observable<any> {
+    return this.http.get<any>(`${this.resourcePath()}/users/current`);
+  }
 }
