@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatButton, MatIconButton} from "@angular/material/button";
-import {MatIcon} from "@angular/material/icon";
-import {RouterLink} from "@angular/router";
-import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
+import {Router, RouterLink} from '@angular/router';
+import {MatToolbar} from '@angular/material/toolbar';
+import {MatButton, MatIconButton} from '@angular/material/button';
+import {MatIcon} from '@angular/material/icon';
+import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
   selector: 'app-toolbar-content',
@@ -19,8 +19,16 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
     MatMenuItem
   ],
   templateUrl: './toolbar-content.component.html',
-  styleUrl: './toolbar-content.component.css'
+  styleUrls: ['./toolbar-content.component.css']
 })
 export class ToolbarContentComponent {
+  constructor(private router: Router) {}
 
+  logout() {
+
+    localStorage.removeItem('authToken');
+
+
+    this.router.navigate(['/login']);
+  }
 }
