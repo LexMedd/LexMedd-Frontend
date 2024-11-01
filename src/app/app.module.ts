@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-
 import { SubscriptionPlansComponent } from './subscription-plans/ui/components/subscription-plans/subscription-plans.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
@@ -30,7 +29,6 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
-
     CommonModule,
     MatCardModule,
 

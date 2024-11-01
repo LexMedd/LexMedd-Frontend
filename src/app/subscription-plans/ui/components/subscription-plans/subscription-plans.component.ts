@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SubscriptionPlan } from '../../../domain/models/subscription-plan.model';
 import { SubscriptionPlansFacade } from '../../../application/services/subscription-plans.facade.service';
-import {SubscriptionPlanService} from '../../../application/services/subscription-plan.service';
+import { SubscriptionPlanService } from '../../../application/services/subscription-plan.service';
 import {
   MatCard,
   MatCardActions,
@@ -11,8 +11,7 @@ import {
   MatCardImage,
   MatCardTitle
 } from '@angular/material/card';
-import {MatButton} from '@angular/material/button';
-// @ts-ignore import {ToolbarContentComponent} from '../../../../public/components/toolbar-content/toolbar-content.component';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-subscription-plans',
@@ -26,7 +25,7 @@ import {MatButton} from '@angular/material/button';
     MatButton,
     MatCardActions,
     MatCardImage,
-    //ToolbarContentComponent
+
   ],
   styleUrls: ['./subscription-plans.component.scss']
 })
