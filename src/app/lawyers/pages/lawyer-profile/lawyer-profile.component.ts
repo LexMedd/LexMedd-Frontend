@@ -3,10 +3,17 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Lawyer } from '../../model/lawyer.entity';
 import { LawyerService } from '../../services/lawyer.service';
 import { firstValueFrom } from 'rxjs';
+import {ToolbarContentComponent} from '../../../public/components/toolbar-content/toolbar-content.component';
+import {FooterContentComponent} from '../../../public/components/footer-content/footer-content.component';
 
 @Component({
   selector: 'app-lawyer-profile',
   templateUrl: './lawyer-profile.component.html',
+  standalone: true,
+  imports: [
+    ToolbarContentComponent,
+    FooterContentComponent
+  ],
   styleUrls: ['./lawyer-profile.component.css']
 })
 export class LawyerProfileComponent implements OnInit {
