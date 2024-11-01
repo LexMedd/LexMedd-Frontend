@@ -4,10 +4,19 @@ import { LawyerService } from '../../../lawyers/services/lawyer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LawyerProfileComponent } from '../../../lawyers/pages/lawyer-profile/lawyer-profile.component';
 import {firstValueFrom} from "rxjs";
+import {NgForOf} from '@angular/common';
+import {ToolbarContentComponent} from "../../components/toolbar-content/toolbar-content.component";
+import {FooterContentComponent} from '../../components/footer-content/footer-content.component';
 
 @Component({
   selector: 'app-lawyer-list',
   templateUrl: './lawyer-list.component.html',
+  standalone: true,
+  imports: [
+    NgForOf,
+    ToolbarContentComponent,
+    FooterContentComponent
+  ],
   styleUrls: ['./lawyer-list.component.css']
 })
 export class LawyerListComponent implements OnInit {
