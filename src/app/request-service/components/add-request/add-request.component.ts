@@ -13,6 +13,8 @@ import {
 } from "../../../public/components/dialogs/dialog-successfully/dialog-successfully.component";
 import {RequestServiceEntity} from "../../model/request-service.entity";
 import {RequestService} from '../../service/request.service';
+import {ToolbarContentComponent} from '../../../public/components/toolbar-content/toolbar-content.component';
+import {AppModule} from '../../../app.module';
 
 @Component({
   selector: 'app-add-request',
@@ -33,7 +35,9 @@ import {RequestService} from '../../service/request.service';
     MatIconButton,
     MatSelect,
     MatOption,
-    NgForOf
+    NgForOf,
+    ToolbarContentComponent
+
   ],
   templateUrl: './add-request.component.html',
   styleUrl: './add-request.component.css'
