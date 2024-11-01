@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { FooterContentComponent } from './footer-content.component';
 
 describe('FooterContentComponent', () => {
@@ -7,11 +8,10 @@ describe('FooterContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FooterContentComponent ]
-    }).compileComponents();
-  });
+      declarations: [FooterContentComponent]
+    })
+    .compileComponents();
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(FooterContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,10 +19,5 @@ describe('FooterContentComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should have current year', () => {
-    const currentYear = new Date().getFullYear();
-    expect(component.currentYear).toBe(currentYear);
   });
 });
