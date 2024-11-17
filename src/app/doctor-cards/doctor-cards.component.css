@@ -29,14 +29,3 @@
   justify-content: flex-end;
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
