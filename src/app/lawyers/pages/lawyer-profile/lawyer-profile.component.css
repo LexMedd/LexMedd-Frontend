@@ -48,19 +48,3 @@
   flex-direction: column;
 }
 
-.card-lower {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  flex-wrap: wrap;
-  border-radius: 20px;
-  background-color: #F2EFDC;
-  box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.2);
-}
-
-.contact-info {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
-  flex-direction: column;
-}
