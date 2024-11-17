@@ -1,0 +1,47 @@
+<div class="bg-gray-50 p-6 rounded-md shadow-md">
+  <h2 class="text-2xl font-semibold text-center mb-6">Filtros de Doctores</h2>
+
+  <!-- Filtros de Especialidad -->
+  <div class="mb-6">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Especialidad</mat-label>
+      <mat-select [(ngModel)]="selectedSpecialty" (selectionChange)="onSpecialtyChange()">
+        <mat-option value="all">Todas las especialidades</mat-option>
+        <mat-option value="cardiology">Cardiología</mat-option>
+        <mat-option value="neurology">Neurología</mat-option>
+        <mat-option value="pediatrics">Pediatría</mat-option>
+        <mat-option value="dermatology">Dermatología</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Filtros de Ubicación -->
+  <div class="mb-6">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Ubicación</mat-label>
+      <mat-select [(ngModel)]="selectedLocation" (selectionChange)="onLocationChange()">
+        <mat-option value="all">Todas las ubicaciones</mat-option>
+        <mat-option value="lima">Lima</mat-option>
+        <mat-option value="cusco">Cusco</mat-option>
+        <mat-option value="arequipa">Arequipa</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Cards de Doctores Filtrados -->
+  <div *ngFor="let doctor of filteredDoctors" class="doctor-card">
+    <mat-card class="mb-4">
+      <mat-card-header>
+        <mat-card-title>{{ doctor.name }}</mat-card-title>
+        <mat-card-subtitle>{{ doctor.specialty }} - {{ doctor.location }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="doctor.image" alt="{{ doctor.name }}">
+      <mat-card-content>
+        <p>{{ doctor.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Ver más</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
