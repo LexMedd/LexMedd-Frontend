@@ -54,11 +54,11 @@ export class DoctorCardsComponent {
   selectedSpecialty: string = 'all';
   selectedLocation: string = 'all';
 
-  filteredDoctors: any[] = [...this.doctors];  // Crear una copia inicial de los doctores
+  filteredDoctors: any[] = [...this.doctors];  
 
-  // Aplica los filtros
+  
   applyFilters() {
-    // Filtra los doctores según los filtros seleccionados
+    
     this.filteredDoctors = this.doctors.filter(doctor => {
       const matchesSpecialty = this.selectedSpecialty === 'all' || doctor.specialty === this.selectedSpecialty;
       const matchesLocation = this.selectedLocation === 'all' || doctor.location === this.selectedLocation;
@@ -66,7 +66,7 @@ export class DoctorCardsComponent {
     });
   }
 
-  // Método para actualizar los filtros cada vez que se cambian
+ 
   onSpecialtyChange() {
     this.applyFilters();
   }
