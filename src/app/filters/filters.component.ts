@@ -17,12 +17,9 @@ export class FiltersComponent {
     // Más doctores aquí
   ];
 
-  // Lista que contendrá los doctores filtrados
   filteredDoctorsList = [...this.doctors];  // Inicialmente muestra todos los doctores
 
-  // Método para filtrar doctores según los filtros seleccionados
   applyFilters() {
-    // Filtra los doctores basados en especialidad y ubicación
     this.filteredDoctorsList = this.doctors.filter(doctor => {
       const matchesSpecialty = this.selectedSpecialty === 'all' || doctor.specialty === this.selectedSpecialty;
       const matchesLocation = this.selectedLocation === 'all' || doctor.location === this.selectedLocation;
@@ -30,12 +27,10 @@ export class FiltersComponent {
     });
   }
 
-  // Método para manejar cambios en la especialidad
   onSpecialtyChange() {
     this.applyFilters();
   }
 
-  // Método para manejar cambios en la ubicación
   onLocationChange() {
     this.applyFilters();
   }
