@@ -1,7 +1,6 @@
 <div class="bg-gray-50 p-6 rounded-md shadow-md">
   <h2 class="text-2xl font-semibold text-center mb-6">Filtros de Doctores</h2>
 
-  <!-- Filtros de Especialidad -->
   <div class="mb-6">
     <mat-form-field appearance="fill" class="w-full">
       <mat-label>Especialidad</mat-label>
@@ -15,7 +14,6 @@
     </mat-form-field>
   </div>
 
-  <!-- Filtros de Ubicación -->
   <div class="mb-6">
     <mat-form-field appearance="fill" class="w-full">
       <mat-label>Ubicación</mat-label>
@@ -28,7 +26,6 @@
     </mat-form-field>
   </div>
 
-  <!-- Cards de Doctores Filtrados -->
   <div *ngFor="let doctor of filteredDoctors" class="doctor-card">
     <mat-card class="mb-4">
       <mat-card-header>
