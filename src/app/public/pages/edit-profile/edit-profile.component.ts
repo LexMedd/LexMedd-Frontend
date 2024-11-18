@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { UserEntity} from '../../../user/model/user.entity';
 import { BaseService } from '../../../shared/services/base.service';
 import { firstValueFrom } from 'rxjs';
-import {User} from '../../../iam/model/user';
 import {MatButton} from '@angular/material/button';
 import {RebaseService} from '../../../shared/services/rebase.service';
 import {ToolbarContentComponent} from '../../components/toolbar-content/toolbar-content.component';
